@@ -3,8 +3,8 @@ import routes from './routes.js';
 import cors from 'cors';
 
 const app = express();
-const port = 3000;
-const host = 'localhost';
+const port = process.env.PORT || 3000;
+const host = process.env.HOST != 'production' ? 'localhost' : '0.0.0.0';
 
 app.use(cors({
     origin: 'https://notesapp-v1.dicodingacademy.com',
